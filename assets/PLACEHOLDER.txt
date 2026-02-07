@@ -1,0 +1,81 @@
+# How to Use Your Own USDZ Model
+
+The site is currently using **demo models** from public sources so you can test immediately:
+- **Desktop/Android**: Astronaut GLB model (from model-viewer.dev)
+- **iPhone**: Toy Drummer USDZ model (from Apple's AR Quick Look gallery)
+
+## To Use Your Own Bowl USDZ File:
+
+### Option 1: Quick Method (Recommended)
+
+1. **Add your USDZ file** to the `assets` folder
+2. **Name it** `bowl.usdz`
+3. **Edit `index.html` line 47-48:**
+
+```html
+<!-- CHANGE THIS: -->
+src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+ios-src="https://developer.apple.com/augmented-reality/quick-look/models/drummertoy/toy_drummer_idle.usdz"
+
+<!-- TO THIS: -->
+src="assets/bowl.usdz"
+ios-src="assets/bowl.usdz"
+```
+
+4. **Optional: If you have GLB version too:**
+```html
+src="assets/bowl.glb"
+ios-src="assets/bowl.usdz"
+```
+
+### Option 2: Keep Both Demo and Your Model
+
+Create a dropdown or button to switch between models using JavaScript.
+
+## Where to Get/Convert USDZ Files:
+
+### Free USDZ Models
+- Apple AR Gallery: https://developer.apple.com/augmented-reality/quick-look/
+- Sketchfab: https://sketchfab.com/ (filter by "Downloadable")
+- Poly Pizza: https://poly.pizza/
+
+### Convert Your 3D Model to USDZ
+
+If you have `.obj`, `.fbx`, `.glb`, or other formats:
+
+**Mac (FREE - Best Quality):**
+1. Download **Reality Converter** from Apple
+2. Drag your model file into it
+3. Adjust materials if needed
+4. Export as USDZ
+
+**Online Converters:**
+- Model Viewer Editor: https://modelviewer.dev/editor/
+- Sketchfab: Upload → Download as USDZ
+
+**Blender (Advanced):**
+1. Import your model
+2. Install USD exporter plugin
+3. Export as USD/USDZ
+
+## Testing Checklist:
+
+- [ ] USDZ file is in `assets` folder
+- [ ] Updated `src` and `ios-src` in index.html
+- [ ] File size is under 10MB (for best performance)
+- [ ] Tested on iPhone Safari
+- [ ] AR placement works on flat surfaces
+
+## Current Demo Model URLs:
+
+**GLB (Desktop/Android):**
+```
+https://modelviewer.dev/shared-assets/models/Astronaut.glb
+```
+
+**USDZ (iPhone):**
+```
+https://developer.apple.com/augmented-reality/quick-look/models/drummertoy/toy_drummer_idle.usdz
+```
+
+These are safe, publicly available models perfect for testing!

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Bowl Viewer - See It On Your Table</title>
+    <meta name="description" content="View 3D bowl in augmented reality on your table using your iPhone">
+
+    <!-- Model-viewer component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-icon">🥣</div>
+                <h1 class="logo-text">AR Bowl Viewer</h1>
+            </div>
+            <p class="tagline">Experience 3D in Your Reality</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- 3D Model Viewer Card -->
+            <div class="viewer-card glass-card">
+                <div class="card-header">
+                    <h2>3D Model Demo</h2>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>AR Ready</span>
+                    </div>
+                </div>
+
+                <div class="model-viewer-container">
+                    <model-viewer id="bowl-viewer" src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                        ios-src="https://developer.apple.com/augmented-reality/quick-look/models/drummertoy/toy_drummer_idle.usdz"
+                        alt="3D Model - AR Ready" ar ar-modes="scene-viewer quick-look" camera-controls auto-rotate
+                        shadow-intensity="1" exposure="1" tone-mapping="neutral" loading="eager" reveal="auto"
+                        ar-scale="auto" camera-orbit="0deg 75deg 105%" min-camera-orbit="auto auto 5%"
+                        max-camera-orbit="auto auto 200%">
+
+                        <!-- AR Button -->
+                        <button slot="ar-button" class="ar-button" id="ar-button">
+                            <span class="ar-icon">📱</span>
+                            <span class="ar-text">View in Your Space</span>
+                        </button>
+
+                        <!-- Loading indicator -->
+                        <div class="loading-indicator" slot="poster">
+                            <div class="spinner"></div>
+                            <p>Loading 3D Model...</p>
+                        </div>
+                    </model-viewer>
+                </div>
+
+                <div class="model-info">
+                    <div class="info-item">
+                        <span class="info-icon">📐</span>
+                        <span class="info-text">Rotate & Zoom</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✨</span>
+                        <span class="info-text">Auto-Rotate Enabled</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <span class="info-text">Tap AR to Place</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructions Card -->
+            <div class="instructions-card glass-card">
+                <h3>How to Use AR</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Open on iPhone</h4>
+                            <p>This website works best on iPhone with iOS 12+ for AR features</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Tap "View in Your Space"</h4>
+                            <p>Click the AR button above to open your camera</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Place on Table</h4>
+                            <p>Point your camera at a flat surface and tap to place the bowl</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Interact & Explore</h4>
+                            <p>Move around, resize, and rotate the 3D model in real space</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Support Info -->
+            <div class="support-card glass-card">
+                <h3>Device Support</h3>
+                <div class="support-grid">
+                    <div class="support-item supported">
+                        <div class="support-icon">📱</div>
+                        <h4>iPhone (iOS 12+)</h4>
+                        <p>Full AR Quick Look support</p>
+                    </div>
+                    <div class="support-item supported">
+                        <div class="support-icon">🤖</div>
+                        <h4>Android (ARCore)</h4>
+                        <p>AR Scene Viewer support</p>
+                    </div>
+                    <div class="support-item partial">
+                        <div class="support-icon">💻</div>
+                        <h4>Desktop</h4>
+                        <p>3D viewer only (no AR)</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with ❤️ using Model Viewer & AR Quick Look</p>
+            <p class="footer-note">No app download required • Works directly in Safari</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
